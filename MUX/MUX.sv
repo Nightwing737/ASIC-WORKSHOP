@@ -1,10 +1,15 @@
 module MUX (
-    input  logic [3:0] I,
-    input  logic [1:0] S,
-    output logic Y
+    I,
+    S,
+    Y
 );
 
-    always_comb begin
+    input [3:0] I;
+    input [1:0] S;
+    output Y;
+    reg Y;
+
+    always @(*) begin
         case (S)
             2'b00: Y = I[0];
             2'b01: Y = I[1];
