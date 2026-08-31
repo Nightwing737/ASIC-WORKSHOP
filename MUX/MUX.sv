@@ -6,8 +6,7 @@ module MUX (
 
     input [3:0] I;
     input [1:0] S;
-    output Y;
-    reg Y;
+    output reg Y;
 
     always @(*) begin
         case (S)
