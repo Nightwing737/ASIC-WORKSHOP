@@ -1,34 +1,32 @@
-module MUX_tb;
+    module MUX_tb;
 
-    reg [3:0] I;
-    reg [1:0] S;
-    wire Y;
+        reg [3:0] I;
+        reg [1:0] S;
+        wire Y;
 
-    MUX uut (
-        .I(I),
-        .S(S),
-        .Y(Y)
-    );
+        MUX uut (
+            .I(I),
+            .S(S),
+            .Y(Y)
+        );
 
-    initial begin
-        $dumpfile("MUX/mux.vcd");
-        $dumpvars(0, MUX_tb);
-        $monitor("I=%b S=%b Y=%b", I, S, Y);
+        initial begin
+            $monitor("I=%b S=%b Y=%b", I, S, Y);
 
-        I = 4'b1010;
+            I = 4'b1010;
 
-        S = 2'b00;
-        #10;
+            S = 2'b00;
+            #10;
 
-        S = 2'b01;
-        #10;
+            S = 2'b01;
+            #10;
 
-        S = 2'b10;
-        #10;
+            S = 2'b10;
+            #10;
 
-        S = 2'b11;
-        #10;
-        $finish;
-    end
+            S = 2'b11;
+            #10;
+            $finish;
+        end
 
-endmodule
+    endmodule
