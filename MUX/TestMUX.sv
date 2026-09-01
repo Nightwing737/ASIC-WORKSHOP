@@ -11,6 +11,8 @@ module MUX_tb;
     );
 
     initial begin
+        $dumpfile("MUX/mux.vcd");
+        $dumpvars(0, MUX_tb);
         $monitor("I=%b S=%b Y=%b", I, S, Y);
 
         I = 4'b1010;
@@ -26,7 +28,6 @@ module MUX_tb;
 
         S = 2'b11;
         #10;
-
         $finish;
     end
 
